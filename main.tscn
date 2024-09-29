@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi81kdi8w1o1p"]
+
+[ext_resource type="Script" path="res://Region.cs" id="1_4g1ja"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sfx77"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-4, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_4g1ja")
+HighlightColor = Color(0.256887, 0.878546, 2.31028e-06, 1)
+
+[node name="Collision" type="CollisionPolygon2D" parent="Area2D"]
+material = SubResource("CanvasItemMaterial_sfx77")
+position = Vector2(603.771, -12.0042)
+scale = Vector2(78.2431, 66.0208)
+polygon = PackedVector2Array(4, 5, 4, 3, -3, 2, -5, 6, -2, 8, 3, 7)
+
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
